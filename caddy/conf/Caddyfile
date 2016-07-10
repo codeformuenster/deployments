@@ -18,3 +18,11 @@ unims-kli-api.codeformuenster.org {
   gzip
   # prometheus
 }
+
+slackin.codeformuenster.org {
+  tls admin@codeformuenster.org
+
+  proxy / slackin:3000
+  log stdout
+  gzip
+}
