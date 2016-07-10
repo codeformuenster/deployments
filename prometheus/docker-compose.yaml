@@ -8,3 +8,8 @@ services:
     volumes:
       - ./conf:/etc/prometheus
       - ./data:/prometheus
+
+networks:
+  default:
+    external:
+      name: caddy
