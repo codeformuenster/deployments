@@ -26,3 +26,19 @@ slackin.codeformuenster.org {
   log stdout
   gzip
 }
+
+prometheus.codeformuenster.org {
+  tls admin@codeformuenster.org
+
+  proxy / prometheus:9090
+  log stdout
+  gzip
+}
+
+grafana.codeformuenster.org {
+  tls admin@codeformuenster.org
+
+  proxy / grafana:3000
+  log stdout
+  gzip
+}

@@ -1,0 +1,12 @@
+version: '2'
+services:
+  slackin:
+    image: grafana/grafana:3.1.0-beta1
+    env_file: secrets.env
+    environment:
+      - GF_SERVER_ROOT_URL=http://grafana.codeformuenster.org
+
+networks:
+  default:
+    external:
+      name: caddy
