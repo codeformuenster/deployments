@@ -1,7 +1,7 @@
 version: '2'
 services:
   slackin:
-    build: codeformuenster/slackin-docker:0.8.3
+    image: codeformuenster/slackin-docker:0.8.3
     env_file: secrets.env
 
 networks:
