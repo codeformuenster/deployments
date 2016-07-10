@@ -1,6 +1,6 @@
 version: '2'
 services:
-  slackin:
+  grafana:
     image: grafana/grafana:3.1.0-beta1
     env_file: secrets.env
     environment:
