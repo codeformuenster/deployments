@@ -1,7 +1,7 @@
 version: '2'
 services:
   json-server:
-    image: docker-muenster/json-server:0.8.15
+    image: dockermuenster/json-server:0.8.15
     volumes:
      - ./conf:/var/lib/json-server
      - ./data:/var/lib/json-server
