@@ -1,0 +1,12 @@
+version: '2'
+services:
+  json-server:
+    build: docker-muenster/json-server:0.8.15
+    volumes:
+     - ./conf:/var/lib/json-server
+     - ./data:/var/lib/json-server
+
+networks:
+  default:
+    external:
+      name: caddy

@@ -1,0 +1,15 @@
+version: '2'
+services:
+  caddy:
+    image: webwurst/caddy:0.9-beta.1
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./conf:/etc/caddy
+      - ./data:/var/lib/caddy
+
+networks:
+  default:
+    external:
+      name: caddy

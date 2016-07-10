@@ -1,0 +1,17 @@
+json-server.codeformuenster.org {
+  tls admin@codeformuenster.org
+
+  proxy / json-server:3000 {
+    # websocket
+  }
+}
+
+unims-kli-api.codeformuenster.org {
+  proxy / unims-kli-api:8080
+
+  log stdout
+  cors
+  jsonp /
+  gzip
+  prometheus
+}

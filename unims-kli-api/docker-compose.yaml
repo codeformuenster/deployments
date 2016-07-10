@@ -1,0 +1,11 @@
+version: "2"
+services:
+  unims-kli-api:
+    image: codeformuenster/unims-kli-api:0.1.2
+    environment:
+      - KLI_PROPERTIES=TIMESTAMP,AirTC_Avg,RH_Avg,Rain_Tot,BP_kPa_Avg,WS_Gust_Max,WindDir_D1_WVT,WS_ms_S_WVT
+
+networks:
+  default:
+    external:
+      name: caddy
