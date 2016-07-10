@@ -1,0 +1,10 @@
+version: "2"
+services:
+  prometheus-node-exporter:
+    image: prom/node-exporter:0.20.0
+    net: host
+
+networks:
+  default:
+    external:
+      name: caddy
