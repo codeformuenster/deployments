@@ -1,0 +1,14 @@
+version: '2'
+services:
+  cadvisor:
+    image: google/cadvisor:v0.23.2
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+
+networks:
+  default:
+    external:
+      name: caddy
