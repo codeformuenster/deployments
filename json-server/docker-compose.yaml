@@ -3,7 +3,7 @@ services:
   json-server:
     image: dockermuenster/json-server:0.8.15
     volumes:
-     - ./conf:/var/lib/json-server
+     - ./conf:/etc/json-server
      - ./data:/var/lib/json-server
 
 networks:
