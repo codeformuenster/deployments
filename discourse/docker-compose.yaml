@@ -1,0 +1,35 @@
+version: '2'
+services:
+  discourse:
+    image: dockermuenster/discourse:1.6.0.beta11-2
+    volumes:
+      - ./conf/discourse.conf:/usr/src/app/config/discourse.conf
+      - ./data/assets:/usr/src/app/public/assets
+      - ./data/uploads:/usr/src/app/public/uploads
+      - ./data/backups:/usr/src/app/public/backups
+    networks:
+      - default
+      - caddy
+
+  discourse-sidekiq:
+    image: dockermuenster/discourse:1.6.0.beta11-2
+    command: bundle exec sidekiq -q critical -q default -q low -v
+    volumes_from:
+      - discourse
+
+  postgres:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=discourse
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+
+  redis:
+    image: redis:3.2
+
+networks:
+  caddy:
+    external: true
+
+# on first run:
+# docker-compose run discourse bash -c "sleep 3 && rake db:migrate assets:precompile"
