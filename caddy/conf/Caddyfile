@@ -42,3 +42,10 @@ grafana.codeformuenster.org {
   log stdout
   gzip
 }
+
+geojson-display.codeformuenster.org {
+  tls admin@codeformuenster.org
+  gzip
+  log stdout
+  proxy / geojson-display:80
+}

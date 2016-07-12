@@ -1,0 +1,9 @@
+version: '2'
+services:
+  geojson-display:
+    image: geojson-display:master
+
+networks:
+  default:
+    external:
+      name: caddy
