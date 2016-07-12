@@ -1,7 +1,7 @@
 version: '2'
 services:
   geojson-display:
-    image: geojson-display:master
+    image: codeformuenster/geojson-display:master
 
 networks:
   default:
