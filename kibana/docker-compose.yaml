@@ -1,0 +1,9 @@
+version: '2'
+services:
+  kibana:
+    image: kibana:5.0
+
+networks:
+  default:
+    external:
+      name: caddy

@@ -1,46 +1,39 @@
 json-server.codeformuenster.org {
   tls admin@codeformuenster.org
   gzip
-
-  proxy / json-server:3000 {
-    # websocket
-  }
+  log stdout
+  proxy / json-server:3000
 }
 
 unims-kli-api.codeformuenster.org {
   tls admin@codeformuenster.org
-
-  proxy / unims-kli-api:8080
-
+  gzip
   log stdout
+  proxy / unims-kli-api:8080
   # cors
   # jsonp /
-  gzip
   # prometheus
 }
 
 slackin.codeformuenster.org {
   tls admin@codeformuenster.org
-
-  proxy / slackin:3000
-  log stdout
   gzip
+  log stdout
+  proxy / slackin:3000
 }
 
 prometheus.codeformuenster.org {
   tls admin@codeformuenster.org
-
-  proxy / prometheus:9090
-  log stdout
   gzip
+  log stdout
+  proxy / prometheus:9090
 }
 
 grafana.codeformuenster.org {
   tls admin@codeformuenster.org
-
-  proxy / grafana:3000
-  log stdout
   gzip
+  log stdout
+  proxy / grafana:3000
 }
 
 geojson-display.codeformuenster.org {
@@ -48,4 +41,25 @@ geojson-display.codeformuenster.org {
   gzip
   log stdout
   proxy / geojson-display:80
+}
+
+elasticsearch.codeformuenster.org {
+  tls admin@codeformuenster.org
+  gzip
+  log stdout
+  proxy / elasticsearch:9200
+}
+
+kibana.codeformuenster.org {
+  tls admin@codeformuenster.org
+  gzip
+  log stdout
+  proxy / kibana:5601
+}
+
+discuss.codeformuenster.org {
+  tls admin@codeformuenster.org
+  gzip
+  log stdout
+  proxy / discourse:3000
 }
