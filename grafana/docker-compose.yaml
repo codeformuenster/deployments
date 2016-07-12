@@ -2,7 +2,8 @@ version: '2'
 services:
   grafana:
     image: grafana/grafana:3.1.0
-    env_file: secrets.env
+    env_file:
+      - ./secrets/admin-password.env
     environment:
       - GF_SERVER_ROOT_URL=http://grafana.codeformuenster.org
     volumes:
