@@ -3,7 +3,7 @@ services:
   slackin:
     image: codeformuenster/slackin:0.8.3
     env_file:
-      - slack-token.env
+      - ./secrets/slack-token.env
     environment:
       - SLACK_ORG=c4m
 
