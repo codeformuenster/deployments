@@ -2,7 +2,10 @@ version: '2'
 services:
   slackin:
     image: codeformuenster/slackin:0.8.3
-    env_file: secrets.env
+    env_file:
+      - slack-token.env
+    environment:
+      - SLACK_ORG=
 
 networks:
   default:
