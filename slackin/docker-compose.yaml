@@ -5,7 +5,7 @@ services:
     env_file:
       - slack-token.env
     environment:
-      - SLACK_ORG=
+      - SLACK_ORG=c4m
 
 networks:
   default:
