@@ -1,0 +1,13 @@
+version: '2'
+services:
+  filebeat:
+    build: .
+    image: dockermuenster/filebeat
+    volumes:
+      - ./conf:/etc/filebeat
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+
+networks:
+  default:
+    external:
+      name: caddy

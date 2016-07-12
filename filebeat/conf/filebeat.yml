@@ -1,0 +1,24 @@
+
+filebeat.prospectors:
+  - input_type: log
+    paths:
+      - /var/log/*.log
+
+  - input_type: log
+    json.keys_under_root: false
+    paths:
+      - /var/lib/docker/containers/*/*-json.log
+
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"]
+
+  template.name: "filebeat"
+  template.path: "filebeat.template.json"
+  template.overwrite: false
+
+
+# Sets log level. The default log level is error.
+# Available log levels are: critical, error, warning, info, debug
+# logging.level: debug
+
+# https://www.elastic.co/guide/en/beats/filebeat/master/configuration-output-tls.html
