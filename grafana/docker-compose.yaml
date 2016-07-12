@@ -5,6 +5,9 @@ services:
     env_file: secrets.env
     environment:
       - GF_SERVER_ROOT_URL=http://grafana.codeformuenster.org
+    volumes:
+      - ./conf:/etc/grafana
+      - ./data/var/lib/grafana
 
 networks:
   default:
