@@ -1,9 +1,10 @@
 version: '2'
 services:
   geojson-display:
-    image: codeformuenster/geojson-display:master
+    image: codeformuenster/geojson-display:latest
+    networks:
+      - caddy
 
 networks:
-  default:
-    external:
-      name: caddy
+  caddy:
+    external
