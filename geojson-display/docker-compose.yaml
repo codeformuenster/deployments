@@ -7,4 +7,4 @@ services:
 
 networks:
   caddy:
-    external:
+    external: true
